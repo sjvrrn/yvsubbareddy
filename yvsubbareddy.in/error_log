@@ -1,0 +1,1 @@
+[30-Aug-2019 23:52:39 Asia/Calcutta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 123736064 bytes) in /home/srev4cx37hgx/public_html/yvsubbareddy.in/local/app/Http/Controllers/VisitorController.php on line 50
