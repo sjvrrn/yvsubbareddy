@@ -1,0 +1,18 @@
+.m-2{
+	margin: 20px;
+}
+.mt-2{
+	margin-top: 20px;
+}
+hr {
+    border-top: 1px solid #e0e0e0!important;
+    margin:0!important;
+}
+.category-list-item a{
+	font-weight: 4 00;
+	font-size: 16px;
+	display: flex;.
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10px;
+}

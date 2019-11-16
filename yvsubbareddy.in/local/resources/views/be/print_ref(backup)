@@ -1,0 +1,94 @@
+ <?php /*stdClass Object ( [id] => 631 [name] => testing purpose [mobile] => 534535dfdsf [total_members] => 90 [darshan_date] => 2019-10-29 00:00:00 
+ [darshan_type] => speical [accom_date] => 2019-09-26 00:00:00 [reference] => MP [ref_name] => testing [status] => aprove [created_at] => 2019-09-22 09:00:44
+ [updated_at] => 2019-09-24 00:48:22 [staffstatus] => [remarks] => no )*/ ?>
+ <?php
+$dt = new DateTime($visitor->darshan_date);
+$date = $dt->format('d');
+
+$monthNum = $dt->format('m');
+$year     = $dt->format('y');
+$dateObj   = DateTime::createFromFormat('!m', $monthNum);
+$monthName = substr($dateObj->format('F'),0,3); // March
+$name      = $visitor->name;
+$total_members = $visitor->total_members;
+ ?>
+<!DOCTYPE html>
+<html>
+   <head>
+	<title>TTD Letter Head</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+  <style>
+.page-container{      padding-left: 19% !important;
+                        padding-right: 19% !important;
+                        font-family: serif !important;
+                 }
+   #textID{
+          text-align: justify;
+          padding-left: 12%;
+          padding-right: 17%;
+        }  
+</style>
+    </head>
+    <body>
+        <!-- Body Content starts -->
+        <div class="container-fluid" id='DivIdToPrint'>
+           <div class="page-container">
+	           	<div class="row">
+	           	     <div style="float:right;width:100%;text-align:right" class="no-print" >
+                                    <input type='button' id='print-view' value='Print' onclick='printDiv();' class="btn btn-error">
+                                </div>  
+                    <!-- Adds Start -->
+                    <div class="col-md-3 col-xs-12 col-sm-12 mt-2">
+                        
+                    </div>
+                    <!-- Adds End -->
+	           		<div class="col-md-6 col-xs-12 col-sm-8" id="textID">
+					   <div class="d-flex justify-content-between">
+                           <p>Ref:RR/TTD/<?php echo $visitor->id?></p>
+                           <p>Date:<?php echo date('d-m-Y');?></p>
+                       </div>
+                       <span class="d-block">To</span> 
+                       <span class="d-block"><b>The Joint Executive Officer,</b></span>
+                       <span class="d-block">Tirumala Tirupathi Devasthanam,</span>
+                       <span class="d-block">TIRUMALA.</span>
+                       <p class="mt-4">Dear Sir,</p>
+                       <p>Sri <b><?php echo $visitor->name;?></b> is arriving Tirumala on <b><?php echo $date;?><sup>th</sup> <?php echo $monthName; ?>  <?php echo $year;?> </b>along with his family consisting of <b>(<?php echo $total_members; ?>)</b> members to worship <b>LORD VENKATESHWARA SWAMY VARU</b> and they will stay for One Day. </p>
+                       <p>I request you to provide <b>Good</b> accommodation (A.C.Rooms) for One Day i.e. on <b><?php echo $date;?><sup>th</sup> <?php echo $monthName; ?>  <?php echo $year;?></b> necessary arrangements of <b>(<?php echo $total_members; ?>)</b> tickets <b>LINE II BREAK DARSHAN</b> on <b><?php echo $date;?><sup>th</sup> <?php echo $monthName; ?>  <?php echo $year;?></b> on usual terms and conditions.</p>
+
+                       <p>Thank you,</p>
+                       <p>With Regards</p>
+                       <p><b>(<?php echo $name; ?>)</b></p>
+                       <p>Note: Please Produce this letter along with ID Proofs, at the JEO Office on the day of arrival before 12:00 Noon</p>
+        	        </div>
+        	        <!-- Adds Start -->
+					<div class="col-md-3 col-xs-12 col-sm-12 mt-2">
+						
+					</div>
+					<!-- Adds End -->
+	           	</div>
+        	    
+           </div>
+        </div>
+        <!-- Body Content starts -->
+        
+        <script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/angular.js"></script>
+		<script src="assets/js/custom.js"></script>
+		 <script>
+      function printDiv(){
+  var divToPrint = document.getElementById('DivIdToPrint');
+  var popupWin = window.open('', '_blank', 'width=900,height=700,scrollbars=1,resizable=1');
+  popupWin.document.open();
+  popupWin.document.write('<html><head><link rel="stylesheet" href="style.css" type="text/css" /><style>@page { size: landscape; }      table{border-collapse:collapse;} table td, table th {border: black 1px solid;vertical-align:top;padding:5px;}th{text-align:left}#example_length,#example_filter,#example_info,#example_paginate,.no-print{display:none;}.print-only, .print-only-table {display:block;}</style></head><body  onload="window.print()">'+  divToPrint.innerHTML +  '</body></html>'); 
+  popupWin.document.close();
+      
+} 
+    </script>
+	</body>
+</html>

@@ -1,0 +1,67 @@
+.bg-col {
+    background: #b22f30;
+}
+.navbar-brand{
+    color: #fff!important;
+}
+.nav-item{
+    color: #fff!important;
+}
+.carousel-inner .item img{
+	height: 350px;
+}
+.nao-month table {
+    width: 100%;
+    transform: none;
+    filter: none;
+    opacity: 1;
+    transition: transform .5s ease, opacity .5s ease;
+    margin-top: 21px;
+}
+/*MLA PAgE*/
+.mla-list-box ul{
+   list-style-type: none;
+   line-height: 3;
+}
+.mla-list-box ul li{
+    margin-bottom: 20px;
+}
+.mla-list-box ul li a{
+    padding: 10px;
+    color:#101010;
+    text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+}
+.list-cat ul{
+	list-style-type: none;
+  margin-top: 20px;
+}
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #dc3912;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot1 {
+  height: 10px;
+  width: 10px;
+  background-color: #3366cc;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot2 {
+  height: 10px;
+  width: 10px;
+  background-color: #109618;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot3 {
+  height: 10px;
+  width: 10px;
+  background-color: #ff9900;
+  border-radius: 50%;
+  display: inline-block;
+}
